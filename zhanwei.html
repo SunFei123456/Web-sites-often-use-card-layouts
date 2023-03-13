@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            /* 设置背景渐变色 */
+            background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+        }
+
+        .contain {
+            width: 70%;
+            height: 50%;
+            background-color: #5e5e5e;
+            display: flex;
+            background-image: url(./WebSite设计用图/8.jpg);
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            transition: all 0.8s ease-in;
+            border-radius: 20px;
+        }
+
+        /* 文字盒子 */
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 2rem 2rem 2rem 2rem;
+        }
+
+        .title {
+            font-size: 32px;
+            font-weight: 900;
+            color: #fff;
+        }
+
+        .neirong {
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .btn {
+            width: 30%;
+            height: 15%;
+            border: 0;
+            background-color: #233333;
+            color: #fff;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+        .btn:hover{
+            scale: 1.1;
+        }
+
+        .image {
+            position: relative;
+            flex: 1;
+            /* background-color: pink; */
+            /* 设置子元素盒子的间距 */
+        }
+
+        .img {
+            width: 50%;
+            height: 35%;
+            border-radius: 20px;
+            background-size: cover;
+            background-position: center center;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+
+        .img:hover {
+            scale: 1.1;
+        }
+
+        .one-img {
+            z-index: 999;
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%);
+            margin-right: 12px;
+            background-image: url(./WebSite设计用图/8.jpg);
+        }
+        .one-img-active {
+            background-image: url(./WebSite设计用图/8.jpg);
+        }
+
+        .two-img {
+            position: absolute;
+            top: 50%;
+            right: -20%;
+            transform: translateY(-50%);
+            background-image: url(./WebSite设计用图/3.jpg);
+        }
+
+        .two-img-active {
+            background-image: url(./WebSite设计用图/3.jpg);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contain">
+
+        <div class="content">
+            <div class="title">NetWorks</div>
+            <div class="neirong">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, eius
+                voluptates ipsum aperiam temporibus quod harum, obcaecati ipsam, dicta dolore corporis magnam incidunt
+                veniam tempore perferendis alias iste corrupti quia?
+            </div>
+            <button class="btn">Learn More</button>
+        </div>
+
+        <div class="image">
+            <div class="one-img img"></div>
+            <div class="two-img img"></div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        let contain = document.querySelector('.contain')
+
+        function toggleClass(element, classToAdd, classToRemove) {
+            if (element.classList.contains(classToRemove)) {
+                element.classList.remove(classToRemove);
+            }
+
+            element.classList.add(classToAdd);
+        }
+
+        const oneImg = document.querySelector('.one-img');
+        const twoImg = document.querySelector('.two-img');
+
+        oneImg.onclick = function () {
+            toggleClass(contain, 'one-img-active', 'two-img-active');
+            console.log(1);
+        };
+
+        twoImg.onclick = function () {
+            toggleClass(contain, 'two-img-active', 'one-img-active');
+        };
+
+    </script>
+</body>
+
+</html>

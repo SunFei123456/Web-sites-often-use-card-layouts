@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>滤镜实现酷炫动画</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-size: cover;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+        }
+
+        .contain {
+            display: flex;
+            gap: 20px;
+        }
+
+        .card {
+            position: relative;
+            width: 450px;
+            height: 250px;
+            border-radius: 10px;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+
+        .img {
+            border-radius: 20px;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center center;
+            transition: all 0.5s linear;
+        }
+
+        /* 设置第1个图片 */
+        .card:nth-child(1) .img {
+            background-image: url(./WebSite设计用图//3.jpg);
+        }
+
+        /* 设置第2个图片 */
+        .card:nth-child(2) .img {
+            background-image: url(./WebSite设计用图//2.jpg);
+        }
+
+        /* 设置第3个图片 */
+        .card:nth-child(3) .img {
+            background-image: url(./WebSite设计用图/9.jpg);
+        }
+
+        .title {
+            font-size: 22px;
+            position: absolute;
+            left: 0%;
+            top: 0%;
+            transform: translate(-50%, -50%);
+            color: aliceblue;
+            opacity: 0;
+            transition: all 1s ease-in-out;
+        }
+
+        .dir {
+            font-size: 14px;
+            position: absolute;
+            left: 10%;
+            top: 0%;
+            color: aliceblue;
+            opacity: 0;
+            transition: all 1s ease-in-out;
+        }
+
+        .card:hover .title {
+            opacity: 1;
+            left: 50%;
+            top: 20%;
+        }
+
+        .card:hover .dir {
+            opacity: 1;
+            top: 30%;
+        }
+
+        .card:hover .img {
+            filter: brightness(0.2)
+        }
+
+        @media screen and (max-width: 800px) {
+            .contain {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                padding: 16px;
+            
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contain">
+        <div class="card">
+            <div class="img"></div>
+            <div class="title">Happy New Week</div>
+            <div class="dir">Lorem ipsum dolor,
+                sit amet consectetur adipisicing elit. Blanditiis neque quae quos! Doloremque eaque voluptatibus labore
+                at
+                modi quaerat exercitationem aliquid atque, harum nostrum! Aperiam non est ab hic sunt.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img"></div>
+            <div class="title">Happy New Week</div>
+            <div class="dir">Lorem ipsum dolor,
+                sit amet consectetur adipisicing elit. Blanditiis neque quae quos! Doloremque eaque voluptatibus labore
+                at
+                modi quaerat exercitationem aliquid atque, harum nostrum! Aperiam non est ab hic sunt.
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="img"></div>
+            <div class="title">Happy New Week</div>
+            <div class="dir">Lorem ipsum dolor,
+                sit amet consectetur adipisicing elit. Blanditiis neque quae quos! Doloremque eaque voluptatibus labore
+                at
+                modi quaerat exercitationem aliquid atque, harum nostrum! Aperiam non est ab hic sunt.
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url(./WebSite设计用图//2.jpg);
+            background-size: cover;
+            background-position: center center;
+            border-radius: 20px;
+            backdrop-filter: blur(5px)
+        }
+
+        .main {
+            width: 80%;
+            height: 80%;
+            /* 添加毛玻璃效果 */
+            background-color: rgba(112, 112, 112, 0.5);
+            border-radius: 10px;
+        }
+
+        /* 总体下来的是三个纵向布局 分别为 头 身体 脚 */
+        /* 先从头部开始搭建布局 */
+        .head {
+            /* head 布局里面又分为标题 和 内容 两个模块 纵向布局  */
+            /* 可以参考原型图 得知 是居中水平对其  我们可以flex一下*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* 给个宽高  分别宽 为 父级的 100%* 高 大概是 20%*/
+            width: 100%;
+            height: 20%;
+        }
+
+        .head .text {
+            width: 30%;
+            height: 100%;
+            /* 然后在这个文本盒子里面 包含了标题 和 内容 要水平居中 */
+            text-align: center;
+
+        }
+
+        .head .title {
+            font-weight: 700;
+            font-size: 32px;
+            /* 标题 和 内容 要有上下边距 设置margin */
+            margin-bottom: 16px;
+        }
+
+
+        /* 下面 我们开始进行 最复杂的一块 就是 中间部分的搭建 */
+        /* 我们可以看出来 中间部分 又可以分为 左  中  右 三部分   */
+        /* 我们只要依次按照这个顺序 来搭建 就可以了 全程 flex 一把梭 */
+
+        .body {
+            display: flex;
+            width: 100%;
+            height: 50%;
+
+        }
+
+        .left {
+            /* 使用flex 布局 调整为 两端对其 */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex: 0.8;
+            padding: 16px;
+        }
+
+        .left .icon {
+            text-align: center;
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        .left .content {
+            font-size: 14px;
+        }
+
+        .middle {
+            flex: 1;
+            /* 设置图片完整展出 */
+            background-image: url(./WebSite设计用图//2.jpg);
+            background-size: cover;
+            background-position: center center;
+            border-radius: 20px;
+
+        }
+
+        .right {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 16px;
+            flex: 0.8;
+        }
+
+        .right .icon {
+            text-align: center;
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        .right .content {
+            font-size: 14px;
+        }
+
+        .footer {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 20%;
+        }
+
+        .footer .text {
+            margin-top: 16px;
+            width: 30%;
+            height: 100%;
+            /* 然后在这个文本盒子里面 包含了标题 和 内容 要水平居中 */
+            text-align: center;
+        }
+
+        .footer .icon {
+            font-weight: 700;
+            font-size: 32px;
+            /* 标题 和 内容 要有上下边距 设置margin */
+            margin-bottom: 16px;
+
+        }
+
+        .footer .content {
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .footer .btn {
+            width: 150px;
+            height: 35%;
+            border: 0;
+            background-color: #233333;
+            color: #fff;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.5s;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="head">
+            <div class="text">
+                <div class="title">How Image Beautiful</div>
+                <div class="content">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae maxime
+
+                </div>
+            </div>
+        </div>
+
+
+       
+        <div class="body">
+            <div class="left">
+                <div class="icon">Happy</div>
+                <div class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, minima
+                    reprehenderit. Consequuntur sed quisquam aliquid vitae quae officiis id voluptates unde voluptas,
+                </div>
+
+                <div class="icon">Slow</div>
+                <div class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, minima
+                    reprehenderit. Consequuntur sed quisquam aliquid vitae quae officiis id voluptates unde voluptas,
+                </div>
+            </div>
+            <!-- 图片-- 插图  -->
+            <div class="middle"></div>
+            <!-- 右边 和左边很相似 -->
+            <div class="right">
+                <div class="icon">Fast</div>
+                <div class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, minima
+                    reprehenderit. Consequuntur sed quisquam aliquid vitae quae officiis id voluptates unde voluptas,
+                </div>
+
+                <div class="icon">Money</div>
+                <div class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, minima
+                    reprehenderit. Consequuntur sed quisquam aliquid vitae quae officiis id voluptates unde voluptas,
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="text">
+                <div class="icon">Cool</div>
+                <div class="content">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut rem minus rerum, perspiciatis illum
+                    minima,
+                </div>
+                <button class="btn">Lorem More</button>
+
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
